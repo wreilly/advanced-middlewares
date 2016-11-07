@@ -25,7 +25,11 @@ Promise__proto__: Promise[[PromiseStatus]]: "pending"[[PromiseValue]]: undefined
     To put an [array01] inside another [array02], is spread operator necessary ? [array02, [array01]]
     */
       // return [ ...state, action.payload ]; // Nope. (Secondo me.)
-      return [ ...state, ...action.payload ];
+
+
+      console.log("WR__ Reducers/Users,  action.payload.data - what we got back from the Action's axios call to the API! ", action.payload.data);
+
+      return [ ...state, ...action.payload.data ];
   }
   return state;
 }
